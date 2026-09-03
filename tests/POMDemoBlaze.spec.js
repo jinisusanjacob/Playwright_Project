@@ -174,7 +174,7 @@ test('TC_08 Purchase a product under Phones category', async ({page}) =>
 }
 )
 
-test.only('TC_09 Purchase a product under Monitors category', async ({page}) =>
+test('TC_09 Purchase a product under Monitors category', async ({page}) =>
 {
    const objectHomepage = new Homepage(page)
    await objectHomepage.clickLogin()
