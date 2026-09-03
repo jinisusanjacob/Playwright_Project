@@ -16,7 +16,9 @@ test('TC_03 Login with valid credentials', async ({page}) =>
    await objectLogin.enterLoginUsername(validLoginData.username)
    await objectLogin.enterLoginPassword(validLoginData.password)
    const objectPlaceorder = await objectLogin.login()
-   await expect(page.locator('#nameofuser')).toContainText('jinisj')
+   const usernameElement = page.locator('#nameofuser')
+   await usernameElement.waitFor({ state: 'visible' })
+   await expect(usernameElement).toContainText('jinisj')
    await page.pause()
 }
 )

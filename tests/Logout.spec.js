@@ -11,7 +11,9 @@ test('TC_10 Login and logout', async ({page}) =>
    await objectLogin.enterLoginUsername(validLoginData.username)
    await objectLogin.enterLoginPassword(validLoginData.password)
    const objectPlaceOrder = await objectLogin.login()
-   await expect(page.locator('#nameofuser')).toContainText('jinisj')
+   const usernameElement = page.locator('#nameofuser')
+   await usernameElement.waitFor({ state: 'visible' })
+   await expect(usernameElement).toContainText('jinisj')
    await page.pause()
    
    const objectLogout = new Logout(page)
