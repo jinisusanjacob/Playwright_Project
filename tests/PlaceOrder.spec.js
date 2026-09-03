@@ -19,7 +19,7 @@ test('TC_07 Add a product to cart', async ({page}) =>
    const usernameElement = page.locator('#nameofuser')
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
-   await page.pause()
+   // await page.pause()
    await objectPlaceOrder.selectProduct('Sony xperia z5')
    page.on('dialog', async cartAlert =>
    {
@@ -29,7 +29,7 @@ test('TC_07 Add a product to cart', async ({page}) =>
    )
    await objectPlaceOrder.addProductToCart()
    await expect(page).toHaveURL('https://www.demoblaze.com/prod.html?idp_=6#')
-   await page.pause()
+   // await page.pause()
 }
 ) 
 
@@ -43,10 +43,10 @@ test('TC_08 Purchase a product under Phones category', async ({page}) =>
    const usernameElement = page.locator('#nameofuser')
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
-   await page.pause()
+   // await page.pause()
    await objectPlaceOrder.selectCategories('Phones')
    await objectPlaceOrder.selectProduct('Sony xperia z5')
-   await page.pause()
+   // await page.pause()
    page.on('dialog', async phoneAlert =>
    {
       await expect(phoneAlert.message()).toBe('Product added.')
@@ -55,7 +55,7 @@ test('TC_08 Purchase a product under Phones category', async ({page}) =>
    )
    await objectPlaceOrder.addProductToCart()
    await objectPlaceOrder.clickCartIcon()
-   await page.pause()
+   // await page.pause()
    // const phone = await page.getByRole('cell', { name: 'Sony xperia z5' })
    // await expect(phone).toContainText('xperia')
    await expect(page).toHaveURL('https://www.demoblaze.com/cart.html')
@@ -64,9 +64,9 @@ test('TC_08 Purchase a product under Phones category', async ({page}) =>
    await objectPlaceOrder.clickPurchaseButton()
    const confirmationMessage = await page.getByRole('heading', { name: 'Thank you for your purchase!' })
    await expect(confirmationMessage).toBeVisible()
-   await page.pause()
+   // await page.pause()
    await objectPlaceOrder.confirmSuccessOrder()
-   await page.pause()
+   // await page.pause()
 }
 )
 
@@ -80,10 +80,10 @@ test('TC_09 Purchase a product under Monitors category', async ({page}) =>
    const usernameElement = page.locator('#nameofuser')
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
-   await page.pause()
+   // await page.pause()
    await objectPlaceOrder.selectCategories('Monitors')
    await objectPlaceOrder.selectProduct('ASUS Full HD')
-   await page.pause()
+   // await page.pause()
    page.on('dialog', async monitorAlert =>
    {
       await expect(monitorAlert.message()).toBe('Product added.')
@@ -92,7 +92,7 @@ test('TC_09 Purchase a product under Monitors category', async ({page}) =>
    )
    await objectPlaceOrder.addProductToCart()
    await objectPlaceOrder.clickCartIcon()
-   await page.pause()
+   // await page.pause()
    // const monitor = await page.getByRole('cell', { name: 'ASUS Full HD' })
    // await expect(monitor).toContainText('ASUS')
    await expect(page).toHaveURL('https://www.demoblaze.com/cart.html')
@@ -101,8 +101,8 @@ test('TC_09 Purchase a product under Monitors category', async ({page}) =>
    await objectPlaceOrder.clickPurchaseButton()
    const confirmationMessage = await page.getByRole('heading', { name: 'Thank you for your purchase!' })
    await expect(confirmationMessage).toBeVisible()
-   await page.pause()
+   // await page.pause()
    await objectPlaceOrder.confirmSuccessOrder()
-   await page.pause()
+   // await page.pause()
 }
 )

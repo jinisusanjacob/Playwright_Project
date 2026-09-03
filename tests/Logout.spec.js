@@ -14,13 +14,13 @@ test('TC_10 Login and logout', async ({page}) =>
    const usernameElement = page.locator('#nameofuser')
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
-   await page.pause()
+   // await page.pause()
    
    const objectLogout = new Logout(page)
    await objectLogout.clickLogout()
    //await objectPlaceOrder.clickLogout()
    await expect(page).toHaveURL('https://www.demoblaze.com/index.html')
    await expect(page.locator('#login2')).toBeVisible()
-   await page.pause()
+   // await page.pause()
 }
 )

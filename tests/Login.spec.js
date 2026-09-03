@@ -19,7 +19,7 @@ test('TC_03 Login with valid credentials', async ({page}) =>
    const usernameElement = page.locator('#nameofuser')
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
-   await page.pause()
+   // await page.pause()
 }
 )
 
@@ -36,7 +36,7 @@ test('TC_04 Login with invalid username', async ({page}) =>
    }
    )
    await objectLogin.login()
-   await page.pause()
+   // await page.pause()
 }
 )
 
@@ -53,7 +53,7 @@ test('TC_05 Login with invalid password', async ({page}) =>
    }
    )
    await objectLogin.login()
-   await page.pause()
+   // await page.pause()
 }
 )
 
@@ -70,7 +70,7 @@ test('TC_06 Login with invalid username and password', async ({page}) =>
    }
    )
    await objectLogin.login()
-   await page.pause()
+   // await page.pause()
 }
 )
 

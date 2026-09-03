@@ -28,7 +28,7 @@ test('TC_01 Sign Up successfully', async ({page}) =>
 
    await objectSignup.signup()
    await expect(page).toHaveURL('https://www.demoblaze.com/')
-   await page.pause()
+   // await page.pause()
 }
 )
 
@@ -45,6 +45,6 @@ test('TC_02 Close without signing up', async ({page}) =>
    await objectSignup.enterSignupPassword(signupPass)
    await objectSignup.closeSignup()
    await expect(page).toHaveURL('https://www.demoblaze.com/')
-   await page.pause()
+   // await page.pause()
 }
 )
