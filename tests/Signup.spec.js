@@ -38,7 +38,7 @@ test('TC_02 Close without signing up', async ({page}) =>
    await objectSignup.clickSignUp()
    const signupUser = faker.internet.username() //generate random data using faker library
    const signupPass = faker.internet.password(
-      {length: 10}
+      {length: 9}
    )
    console.log(signupUser, signupPass)
    await objectSignup.enterSignupUsername(signupUser)
