@@ -8,7 +8,7 @@ class PlaceOrder
 
         this.deleteIcons = page.getByRole('link', { name: 'Delete' })
 
-        this.category = (selectedCategory) => page.getByRole('link', { name: selectedCategory })
+        // this.category = (selectedCategory) => page.getByRole('link', { name: selectedCategory })
         // this.product = (selectedProduct) => page.getByRole('link', { name: selectedProduct})
         this.addToCartButton = page.locator('//a[@class="btn btn-success btn-lg"]')
         this.cartIcon = page.locator('#cartur')
@@ -23,11 +23,18 @@ class PlaceOrder
         this.okConfirmationButton = page.getByRole('button', { name: 'OK' })
     }
 
-    async selectCategories(selectedCategory)
+    // async selectCategories(selectedCategory)
+    // {
+    //    await this.category(selectedCategory).click()
+    //    return this
+    // }
+    
+    async selectCategories(categorySelected)
     {
-       await this.category(selectedCategory).click()
+       await this.page.locator(`//a[text()="${categorySelected}"]`).click()
        return this
     }
+
     // async selectProduct(selectedProduct)
     // {
     //    await this.product(selectedProduct).click()
