@@ -20,7 +20,7 @@ test('TC_07 Add a product to cart', async ({page}) =>
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
    // await page.pause()
-   await objectPlaceOrder.selectProduct('Sony xperia z5')
+   await objectPlaceOrder.selectProduct('HTC One M9')
    page.on('dialog', async cartAlert =>
    {
       await expect(cartAlert.message()).toBe('Product added.')
@@ -28,7 +28,7 @@ test('TC_07 Add a product to cart', async ({page}) =>
    }
    )
    await objectPlaceOrder.addProductToCart()
-   await expect(page).toHaveURL('https://www.demoblaze.com/prod.html?idp_=6#')
+   await expect(page).toHaveURL('https://www.demoblaze.com/prod.html?idp_=7#')
    // await page.pause()
 }
 ) 
