@@ -58,6 +58,17 @@ class PlaceOrder
         await this.cartIcon.click()
         return this
     }
+    async clearCart()
+    {
+        await this.clickCartIcon() //opening cart page by refering the above function
+        const deleteButton = this.page.getByRole('link', {name: 'Delete'})
+        if (await deleteButton.count() > 0)
+        {
+            await deleteButton.first().click()
+        }
+        await this.page.getByText('PRODUCT STORE').click()
+        return this
+    }
     async clickPlaceOrder()
     {
         await this.placeOrderButton.click()

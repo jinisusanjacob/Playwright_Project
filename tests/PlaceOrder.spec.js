@@ -20,6 +20,7 @@ test('TC_07 Add a product to cart', async ({page}) =>
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
    // await page.pause()
+   await objectPlaceOrder.clearCart()
    await objectPlaceOrder.selectProduct('HTC One M9')
    page.on('dialog', async cartAlert =>
    {
@@ -30,6 +31,7 @@ test('TC_07 Add a product to cart', async ({page}) =>
    await objectPlaceOrder.addProductToCart()
    await expect(page).toHaveURL('https://www.demoblaze.com/prod.html?idp_=7#')
    // await page.pause()
+   
 }
 ) 
 
@@ -44,6 +46,7 @@ test('TC_08 Purchase a product under Phones category', async ({page}) =>
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
    // await page.pause()
+   await objectPlaceOrder.clearCart()
    await objectPlaceOrder.selectCategories('Phones')
    await objectPlaceOrder.selectProduct('Sony xperia z5')
    // await page.pause()
@@ -81,6 +84,7 @@ test('TC_09 Purchase a product under Monitors category', async ({page}) =>
    await usernameElement.waitFor({ state: 'visible' })
    await expect(usernameElement).toContainText('jinisj')
    // await page.pause()
+   await objectPlaceOrder.clearCart()
    await objectPlaceOrder.selectCategories('Monitors')
    await objectPlaceOrder.selectProduct('ASUS Full HD')
    // await page.pause()
